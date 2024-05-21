@@ -31,6 +31,25 @@ namespace Test
 
             //Pruebas
 
+            //Avanzar Estado
+            /*Console.WriteLine(l1.Estado);
+            Console.WriteLine($"1) {l1.ToString()}");
+            Console.WriteLine(l1.AvanzarEstado());
+            Console.WriteLine(l1.Estado);
+            Console.WriteLine($"2) {l1.ToString()}");
+            Console.WriteLine(l1.AvanzarEstado());
+            Console.WriteLine(l1.Estado);
+            Console.WriteLine($"3) {l1.ToString()}");
+            Console.WriteLine(l1.AvanzarEstado());
+            Console.WriteLine(l1.Estado);
+            Console.WriteLine($"4) {l1.ToString()}");
+            Console.WriteLine(l1.AvanzarEstado());
+            Console.WriteLine(l1.Estado);
+            Console.WriteLine($"5) {l1.ToString()}");
+            Console.WriteLine(l1.AvanzarEstado());
+            Console.WriteLine(l1.Estado);
+            Console.WriteLine($"6) {l1.ToString()}");*/
+
             //Documentos en Inicio
             /*Console.WriteLine("Documentos en Inicio\n");
             Console.WriteLine($"Libro 1 Estado: {l1.Estado}\n");
@@ -53,8 +72,8 @@ namespace Test
             Console.WriteLine($"Extensión: {ext}\n\nCantidad: {cant}\n\nResumen: {res}");*/
 
             //Excepciones
-            bool d = (e2 + l1);
-            bool e = (e1 + l2);
+            /*bool d = (e2 + l1);
+            bool e = (e1 + l2);*/
         }
     }
 }

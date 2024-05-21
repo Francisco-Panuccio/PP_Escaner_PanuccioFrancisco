@@ -10,6 +10,10 @@ namespace Entidades
     public class Escaner
     {
         //Tipos Anidados
+
+        /// <summary>
+        /// Enumerador del departamento del escáner según el tipo de documento.
+        /// </summary>
         public enum Departamento
         {
             Nulo,
@@ -17,6 +21,9 @@ namespace Entidades
             ProcesosTecnicos
         }
 
+        /// <summary>
+        /// Enumerador de los tipos de escáner.
+        /// </summary>
         public enum TipoDoc
         {
             Libro,
@@ -24,32 +31,56 @@ namespace Entidades
         }
 
         //Campos
+
+        /// <summary>
+        /// Atributos del escáner.
+        /// </summary>
         List<Documento> listaDocumentos;
         Departamento locacion;
         string marca;
         TipoDoc tipo;
 
         //Propiedades
+
+        /// <summary>
+        /// Getter para obtener la lista de documentos del escáner.
+        /// </summary>
         public List<Documento> ListaDocumentos
         {
             get => this.listaDocumentos;
         }
 
+        /// <summary>
+        /// Getter para obtener la locación del escáner.
+        /// </summary>
         public Departamento Locacion
         {
             get => this.locacion;
         }
 
+        /// <summary>
+        /// Getter para obtener la marca del escáner.
+        /// </summary>
         public string Marca
         {
             get => this.marca;
         }
+
+        /// <summary>
+        /// Getter para obtener el tipo del escáner.
+        /// </summary>
         public TipoDoc Tipo
         {
             get => this.tipo;
         }
 
         //Constructor
+
+        /// <summary>
+        /// Constructor que inicializa los atributos del escáner con valores determinados.
+        /// </summary>
+        /// <param name="marca">Marca del escáner</param><<
+        /// <param name="tipo">Tipo del escáner</param><<
         public Escaner(string marca, TipoDoc tipo)
         {
             this.marca = marca;
@@ -70,11 +101,24 @@ namespace Entidades
         }
 
         //Operadores
+
+        /// <summary>
+        /// Operador sobreescrito != que indica si un documento NO se encuentra en la lista del escáner.
+        /// </summary>
+        /// <param name="e">Escáner</param><<
+        /// <param name="d">Documento a comparar</param><<
+        /// <returns>True si no se encuentra, False si ya está en la lista</returns>
         public static bool operator !=(Escaner e, Documento d)
         {
             return !(e == d);
         }
 
+        /// <summary>
+        /// Operador sobreescrito + que indica si un documento puede ser agregado a la lista del escáner.
+        /// </summary>
+        /// <param name="e">Escáner</param><<
+        /// <param name="d">Documento a agregar</param><<
+        /// <returns>True si puede agregarse, False si no puede hacerlo por estar repetido o por tener un escáner incorrecto</returns>
         public static bool operator +(Escaner e, Documento d)
         {
             bool retorno = false;
@@ -87,6 +131,12 @@ namespace Entidades
             return retorno;
         }
 
+        /// <summary>
+        /// Operador sobreescrito == que indica si un documento ya se encuentra en la lista del escáner.
+        /// </summary>
+        /// <param name="e">Escáner</param><<
+        /// <param name="d">Documento a comparar</param><<
+        /// <returns>True si se encuentra en la lista (está repetido), False si se encuentra</returns>
         public static bool operator ==(Escaner e, Documento d)
         {
             bool retorno = false;
@@ -117,9 +167,20 @@ namespace Entidades
         }
 
         //Método
+
+        /// <summary>
+        /// Cambia el estado del documento pasado por parámetro en caso de que se encuentre en la lista del escáner.
+        /// </summary>
+        /// <param name="d">Documento a cambiar de estado</param><<
+        /// <returns>True si logró cambiarlo de estado, False si no lo hizo</returns>
         public bool CambiarEstadoDocumento(Documento d)
         {
-            return d.AvanzarEstado();
+            bool retorno = false;
+            if (this.listaDocumentos.Contains(d)) 
+            {
+                retorno = d.AvanzarEstado();
+            }
+            return retorno;
         }
     }
 }
