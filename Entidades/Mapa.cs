@@ -8,7 +8,7 @@ namespace Entidades
 {
     public class Mapa : Documento
     {
-        //Campos
+        /*---Campos---*/
 
         /// <summary>
         /// Atributos del mapa.
@@ -16,7 +16,7 @@ namespace Entidades
         int alto;
         int ancho;
 
-        //Constructor
+        /*---Constructor---*/
 
         /// <summary>
         /// Constructor que inicializa los atributos del mapa con valores determinados.
@@ -34,7 +34,7 @@ namespace Entidades
             this.alto = alto;
         }
 
-        //Propiedades
+        /*---Propiedades---*/
 
         /// <summary>
         /// Getter para obtener el valor del atributo privado "alto".
@@ -60,7 +60,7 @@ namespace Entidades
             get => (this.alto * this.ancho);
         }
 
-        //Operadores
+        /*---Operadores---*/
 
         /// <summary>
         /// Operador sobreescrito != que permite comparar dos mapas.
@@ -84,7 +84,7 @@ namespace Entidades
             return ((m1.Barcode == m2.Barcode) || ((m1.Titulo == m2.Titulo) && (m1.Autor == m2.Autor) && (m1.Anio == m2.Anio) && (m1.Superficie == m2.Superficie)));
         }
 
-        //Método
+        /*---Método---*/
 
         /// <summary>
         /// Sobreescritura del método ToString para visulizar información del mapa.

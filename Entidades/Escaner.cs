@@ -4,12 +4,13 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using ExcepcionPropia;
 
 namespace Entidades
 {
     public class Escaner
     {
-        //Tipos Anidados
+        /*---Tipos Anidados---*/
 
         /// <summary>
         /// Enumerador del departamento del escáner según el tipo de documento.
@@ -30,7 +31,7 @@ namespace Entidades
             Mapa
         }
 
-        //Campos
+        /*---Campos---*/
 
         /// <summary>
         /// Atributos del escáner.
@@ -40,7 +41,7 @@ namespace Entidades
         string marca;
         TipoDoc tipo;
 
-        //Propiedades
+        /*---Propiedades---*/
 
         /// <summary>
         /// Getter para obtener la lista de documentos del escáner.
@@ -74,7 +75,7 @@ namespace Entidades
             get => this.tipo;
         }
 
-        //Constructor
+        /*---Constructor---*/
 
         /// <summary>
         /// Constructor que inicializa los atributos del escáner con valores determinados.
@@ -100,7 +101,7 @@ namespace Entidades
             }
         }
 
-        //Operadores
+        /*---Operadores---*/
 
         /// <summary>
         /// Operador sobreescrito != que indica si un documento NO se encuentra en la lista del escáner.
@@ -124,7 +125,7 @@ namespace Entidades
             bool retorno = false;
             if ((e != d) && (d.Estado == Documento.Paso.Inicio))
             {
-                e.CambiarEstadoDocumento(d);
+                d.AvanzarEstado();
                 e.listaDocumentos.Add(d);
                 retorno = true;
             }
@@ -150,7 +151,6 @@ namespace Entidades
                         if ((d is Libro && ((Libro)doc == (Libro)d)) || (d is Mapa && ((Mapa)doc == (Mapa)d)))
                         {
                             retorno = true;
-                            throw new AgregarAEscanerException("Documento Duplicado", "Escaner.cs", "Operador ==");
                         }                      
                     }
                 }
@@ -166,7 +166,7 @@ namespace Entidades
             return retorno;
         }
 
-        //Método
+        /*---Método---*/
 
         /// <summary>
         /// Cambia el estado del documento pasado por parámetro en caso de que se encuentre en la lista del escáner.
@@ -176,7 +176,7 @@ namespace Entidades
         public bool CambiarEstadoDocumento(Documento d)
         {
             bool retorno = false;
-            if (this.listaDocumentos.Contains(d)) 
+            if (this == d) 
             {
                 retorno = d.AvanzarEstado();
             }

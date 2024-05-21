@@ -8,14 +8,14 @@ namespace Entidades
 {
     public class Libro : Documento
     {
-        //Campo
+        /*---Campo---*/
 
         /// <summary>
         /// Atributos del libro.
         /// </summary>
         int numPaginas;
 
-        //Constructor
+        /*---Constructor---*/
 
         /// <summary>
         /// Constructor que inicializa los atributos del libro con valores determinados.
@@ -31,7 +31,7 @@ namespace Entidades
             this.numPaginas = numPaginas;
         }
 
-        //Propiedades
+        /*---Propiedades---*/
 
         /// <summary>
         /// Getter para obtener el valor del atributo privado "numNormalizado", renombrado a ISBN.
@@ -49,7 +49,7 @@ namespace Entidades
             get => this.numPaginas;
         }
 
-        //Operadores
+        /*---Operadores---*/
 
         /// <summary>
         /// Operador sobreescrito != que permite comparar dos libros.
@@ -73,7 +73,7 @@ namespace Entidades
             return ((l1.Barcode == l2.Barcode) || (l1.ISBN == l2.ISBN) || ((l1.Titulo == l2.Titulo) && (l1.Autor == l2.Autor)));
         }
 
-        //Método
+        /*---Método---*/
 
         /// <summary>
         /// Sobreescritura del método ToString para visulizar información del libro.

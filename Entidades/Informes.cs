@@ -9,7 +9,7 @@ namespace Entidades
 {
     public static class Informes
     {
-        //Métodos
+        /*---Métodos---*/
 
         /// <summary>
         /// Muestra la cantidad, el total de páginas o superficie, y los datos de los documentos dependiendo del estado en el que se encuentren.

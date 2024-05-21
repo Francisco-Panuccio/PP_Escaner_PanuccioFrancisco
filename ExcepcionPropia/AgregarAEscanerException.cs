@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
-namespace Entidades
+namespace ExcepcionPropia
 {
     public class AgregarAEscanerException : Exception
     {
-        //Campos
+        /*---Campos---*/
 
         /// <summary>
         /// Atributos de la excepción.
@@ -16,7 +12,7 @@ namespace Entidades
         string nombreMetodo;
         string nombreClase;
 
-        //Constructor
+        /*---Constructor---*/
 
         /// <summary>
         /// Constructor que inicializa los atributos de la excepción con valores determinados.
@@ -30,7 +26,7 @@ namespace Entidades
             this.nombreClase = clase;
         }
 
-        //Propiedades
+        /*---Propiedades---*/
 
         /// <summary>
         /// Getter para obtener el valor del atributo privado "nombreMetodo".
@@ -47,6 +43,8 @@ namespace Entidades
         {
             get => this.nombreClase;
         }
+
+        /*---Método---*/
 
         /// <summary>
         /// Sobreescritura del método ToString para visulizar información de la excepción.

@@ -8,7 +8,7 @@ namespace Entidades
 {
     public abstract class Documento
     {
-        //Tipos Anidados
+        /*---Tipos Anidados---*/
 
         /// <summary>
         /// Enumerador de los pasos del documento en el escáner.
@@ -22,7 +22,7 @@ namespace Entidades
             Terminado
         }
 
-        //Campos
+        /*---Campos---*/
 
         /// <summary>
         /// Atributos del documento.
@@ -34,7 +34,7 @@ namespace Entidades
         string numNormalizado;
         string titulo;
 
-        //Constructor
+        /*---Constructor---*/
 
         /// <summary>
         /// Constructor que inicializa los atributos del documento con valores determinados.
@@ -53,7 +53,7 @@ namespace Entidades
             this.barcode = barcode;
         }
 
-        //Propiedades
+        /*---Propiedades---*/
 
         /// <summary>
         /// Getter para obtener el valor del atributo privado "anio".
@@ -103,7 +103,7 @@ namespace Entidades
             get => this.titulo;
         }
 
-        //Métodos
+        /*---Métodos---*/
 
         /// <summary>
         /// Avanza el estado del documento en el escáner.
