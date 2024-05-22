@@ -37,7 +37,7 @@ namespace Entidades
                         extension += ((Mapa)doc).Superficie;
                     }                     
                     cantidad++;
-                    resumen += ($"\n{doc.ToString()}");
+                    resumen += ($"{doc.ToString()}");
                 }
             }
         }
