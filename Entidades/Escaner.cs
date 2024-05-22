@@ -17,9 +17,9 @@ namespace Entidades
         /// </summary>
         public enum Departamento
         {
-            Nulo,
-            Mapoteca,
-            ProcesosTecnicos
+            nulo,
+            mapoteca,
+            procesosTecnicos
         }
 
         /// <summary>
@@ -27,8 +27,8 @@ namespace Entidades
         /// </summary>
         public enum TipoDoc
         {
-            Libro,
-            Mapa
+            libro,
+            mapa
         }
 
         /*---Campos---*/
@@ -87,17 +87,17 @@ namespace Entidades
             this.marca = marca;
             this.tipo = tipo;
             this.listaDocumentos = new List<Documento>();
-            if (this.tipo == TipoDoc.Mapa)
+            if (this.tipo == TipoDoc.mapa)
             {
-                this.locacion = Departamento.Mapoteca;
+                this.locacion = Departamento.mapoteca;
             }
-            else if (this.tipo == TipoDoc.Libro)
+            else if (this.tipo == TipoDoc.libro)
             {
-                this.locacion = Departamento.ProcesosTecnicos;
+                this.locacion = Departamento.procesosTecnicos;
             }
             else
             {
-                this.locacion = Departamento.Nulo;
+                this.locacion = Departamento.nulo;
             }
         }
 
@@ -141,7 +141,7 @@ namespace Entidades
         public static bool operator ==(Escaner e, Documento d)
         {
             bool retorno = false;
-            TipoDoc tipoDocumento = d is Libro ? TipoDoc.Libro : TipoDoc.Mapa;
+            TipoDoc tipoDocumento = d is Libro ? TipoDoc.libro : TipoDoc.mapa;
             try 
             {
                 if (e.Tipo == tipoDocumento)
